@@ -7,7 +7,7 @@ d3.csv('data/groupLATAM.csv', function(csv){
     trips = new Data(csv);
     charts = new Chart(trips);
 
-    d3.json('../data/coord.json', function(err,data){
+    d3.json('data/coord.json', function(err,data){
         if(err) {
             console.log(err);
         } else {
