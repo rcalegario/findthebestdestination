@@ -1,0 +1,15 @@
+.map {
+    height: 650px;
+}
+
+.hidden {
+    display: none;
+}
+
+.tab-pane{
+    overflow-y:scroll;
+}
+
+.center {
+    text-align: center;
+}
