@@ -30,9 +30,9 @@ function Data(csv) {
      });
     this.dimensions.start_month = this.trips.dimension(d => { return d.start_month; });
     this.dimensions.start_wday = this.trips.dimension(d => { return d.start_wday; });
-    this.dimensions.post_wday = this.trips.dimension(d => { return d.post_wday; });
+    // this.dimensions.post_wday = this.trips.dimension(d => { return d.post_wday; });
     this.dimensions.type = this.trips.dimension(d => { return d.type; });
-    this.dimensions.carrier = this.trips.dimension(d => { return d.carrier; });
+    // this.dimensions.carrier = this.trips.dimension(d => { return d.carrier; });
         
     this.groups = {};
     
@@ -45,11 +45,11 @@ function Data(csv) {
     reducer(this.groups.start_month);
     this.groups.start_wday = this.dimensions.start_wday.group();
     reducer(this.groups.start_wday);
-    this.groups.post_wday = this.dimensions.post_wday.group();
-    reducer(this.groups.post_wday);
+    // this.groups.post_wday = this.dimensions.post_wday.group();
+    // reducer(this.groups.post_wday);
     this.groups.type = this.dimensions.type.group();
-    this.groups.carrier = this.dimensions.carrier.group();
-    reducer(this.groups.carrier);
+    // this.groups.carrier = this.dimensions.carrier.group();
+    // reducer(this.groups.carrier);
 
     this.filter = {
         origin: null,
@@ -91,13 +91,13 @@ function Data(csv) {
         return element;
     }
 
-    this.postWdayFilter = function() {
-        var wday = this.groups.post_wday.all()
-        if (+wday[0]) {
-            wday = wday.map(wday);
-        }
-        return wday;
-    };
+    // this.postWdayFilter = function() {
+    //     var wday = this.groups.post_wday.all()
+    //     if (+wday[0]) {
+    //         wday = wday.map(wday);
+    //     }
+    //     return wday;
+    // };
 
     this.startWdayFilter = function() {
         var wday = this.groups.start_wday.all();
@@ -128,13 +128,12 @@ function Data(csv) {
         return monthResults;
     };
 
-    this.carrierFilter = function() {
-        return this.groups.carrier.all()
-            .filter(d => { return d.value.count > 0; });
-    };
+    // this.carrierFilter = function() {
+    //     return this.groups.carrier.all()
+    //         .filter(d => { return d.value.count > 0; });
+    // };
 
     this.preTravelFilter = function() {
-        debugger
         var a = this.groups.pre_travel.all();
         var b = a
             .map(element => {

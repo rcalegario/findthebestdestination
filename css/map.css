@@ -1,12 +1,12 @@
 .map {
-    height: 650px;
+    height: 100vh;;
 }
 
 .hidden {
     display: none;
 }
 
-.tab-pane{
+.scroll{
     overflow-y:scroll;
 }
 

@@ -105,8 +105,8 @@ function Chart(trips){
         trips.destinationsFilter(destination);
         trips.typeFilter();
 
-        var postWday = trips.postWdayFilter();
-        this.createRowChart('post-wday', postWday);
+        // var postWday = trips.postWdayFilter();
+        // this.createRowChart('post-wday', postWday);
 
         var startWday = trips.startWdayFilter();
         this.createRowChart('start-wday', startWday);
@@ -117,8 +117,8 @@ function Chart(trips){
         var preTravel = trips.preTravelFilter();
         this.createRowChart('pre-travel', preTravel);
 
-        var carrier = trips.carrierFilter();
-        this.createRowChart('carrier', carrier);
+        // var carrier = trips.carrierFilter();
+        // this.createRowChart('carrier', carrier);
 
         document.getElementById("destinantion-tab").className = 'nav-link';
         document.getElementById("destinantionTab").className = 'tab-pane fade';
