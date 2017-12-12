@@ -86,7 +86,7 @@ function Map(data, trips, charts) {
                 } else {
                     var icon = iconCreator('notOption');
                     marker.setIcon(icon);
-                    marker.setOpacity(0.5);
+                    marker.setOpacity(0.1);
                     marker.on('click', noDestination)
                         .off('click', chooseOrigin);
                 }

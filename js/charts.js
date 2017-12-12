@@ -14,6 +14,9 @@ function Chart(trips){
                     value: ['value.avg'],
                 },
                 onclick: onclick,
+                names: {
+                    "value.avg": "Preço"
+                }
             },
             bar: {
                 width: {
