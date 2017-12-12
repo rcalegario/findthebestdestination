@@ -135,13 +135,16 @@ function Data(csv) {
 
     this.preTravelFilter = function() {
         var a = this.groups.pre_travel.all();
-        var b = a
-            .map(element => {
-                var i = +element.key;
-                element.key = 30*i + ' - ' + 30 * (i+1); 
-                return element;  
-            })
-        var c = b.filter(d => { return d.value.count > 0; });
+        debugger
+        if(+a[0].key > -1) {
+            var a = a
+                .map(element => {
+                    var i = +element.key;
+                    element.key = 30*i + ' - ' + 30 * (i+1); 
+                    return element;  
+                });
+        }
+        var c = a.filter(d => { return d.value.count > 0; });
         return c;
     };
 }

@@ -127,6 +127,8 @@ function Chart(trips){
         document.getElementById("destinantionTab").className = 'tab-pane fade';
         document.getElementById("travel-tab").className = 'nav-link active';
         document.getElementById("travelTab").className = 'tab-pane fade active show';
+        document.getElementById("compare-tab").className = 'nav-link';
+        document.getElementById("compareTab").className = 'tab-pane fadegit ';
         
     };
 
