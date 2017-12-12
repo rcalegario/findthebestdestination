@@ -93,9 +93,11 @@ function Map(data, trips, charts) {
             }
         });
     }
+    var firstDestination;
 
     function restartChoise(e) {
         firstClick = false;
+        firstDestination = null;
         d3.selectAll('#topDestination svg').remove();
         charts.cleanTravelTap();
         d3.selectAll('#comparation svg').remove();
@@ -117,7 +119,6 @@ function Map(data, trips, charts) {
         qtyDestination = 0;
     }
 
-    var firstDestination;
     function chosseDestination(e) {
         if (qtyDestination < limitDestination) {
             var cityDestinantion = e.target.options.city;
